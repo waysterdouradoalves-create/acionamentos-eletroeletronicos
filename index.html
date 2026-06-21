@@ -684,6 +684,545 @@
   }
 
   .nota strong { color: var(--accent2); }
+
+  /* ===== NOVOS ESTILOS: MATEMÁTICA + GERADOR DE EXERCÍCIOS ===== */
+
+  /* XP bar no topo do sidebar */
+  .xp-panel {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface2);
+  }
+
+  .xp-panel-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+
+  .xp-level-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent3);
+  }
+
+  .xp-level-badge .lvl-icon { font-size: 15px; }
+
+  .xp-count {
+    font-size: 11px;
+    color: var(--text3);
+    font-family: var(--mono);
+  }
+
+  .xp-progress-track {
+    height: 6px;
+    background: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .xp-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent3), var(--accent));
+    border-radius: 3px;
+    transition: width .5s ease;
+  }
+
+  /* Math module cards */
+  .math-step-visual {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 16px 0;
+    font-family: var(--mono);
+  }
+
+  .division-anim {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 16px 0;
+  }
+
+  .division-box {
+    text-align: center;
+    padding: 14px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    min-width: 90px;
+  }
+
+  .division-box .num { font-size: 22px; font-weight: 700; color: var(--accent); font-family: var(--mono); }
+  .division-box .lbl { font-size: 10px; color: var(--text3); text-transform: uppercase; letter-spacing: .5px; margin-top: 4px; }
+
+  .division-op { font-size: 24px; color: var(--text3); font-weight: 300; }
+
+  .error-common {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    background: rgba(239,68,68,.06);
+    border: 1px solid rgba(239,68,68,.2);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+  }
+
+  .error-common .err-icon { font-size: 20px; flex-shrink: 0; }
+  .error-common strong { display: block; font-size: 14px; color: var(--red); margin-bottom: 3px; }
+  .error-common p { font-size: 13px; color: var(--text2); line-height: 1.6; margin: 0; }
+
+  /* Mini interactive exercises in math modules */
+  .mini-exercise {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 14px 0;
+  }
+
+  .mini-exercise .mini-q { font-size: 14.5px; margin-bottom: 10px; }
+
+  .mini-input-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .mini-input-row input {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: var(--mono);
+    width: 140px;
+    outline: none;
+  }
+
+  .mini-input-row input:focus { border-color: var(--accent); }
+
+  .mini-input-row button {
+    background: var(--accent2);
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: var(--sans);
+  }
+
+  .mini-input-row button:hover { background: #6b2fd6; }
+
+  .mini-feedback {
+    margin-top: 10px;
+    font-size: 13.5px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    display: none;
+  }
+
+  .mini-feedback.correct { display: block; background: rgba(16,185,129,.12); color: var(--green); border: 1px solid rgba(16,185,129,.3); }
+  .mini-feedback.wrong { display: block; background: rgba(239,68,68,.12); color: var(--red); border: 1px solid rgba(239,68,68,.3); }
+
+  /* Macetes / Formula cards */
+  .macete-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+
+  .macete-formula {
+    font-family: var(--mono);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent);
+    text-align: center;
+    background: var(--surface2);
+    padding: 16px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+  }
+
+  .macete-row {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+
+  .macete-row .macete-tag {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    padding: 4px 0;
+    color: var(--text3);
+  }
+
+  .macete-row.decorar .macete-tag { color: var(--accent3); }
+  .macete-row.raciocinio .macete-tag { color: var(--green); }
+  .macete-row.erro .macete-tag { color: var(--red); }
+
+  .macete-row p { margin: 0; color: var(--text2); }
+
+  /* GERADOR DE EXERCÍCIOS */
+  .gen-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .gen-mode-tabs {
+    display: flex;
+    gap: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 4px;
+  }
+
+  .gen-mode-tab {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--text2);
+    transition: all .15s;
+  }
+
+  .gen-mode-tab.active { background: var(--accent); color: var(--bg); }
+
+  .gen-diff-select {
+    display: flex;
+    gap: 8px;
+  }
+
+  .gen-diff-btn {
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text2);
+    transition: all .15s;
+  }
+
+  .gen-diff-btn.active.facil { background: rgba(16,185,129,.15); border-color: var(--green); color: var(--green); }
+  .gen-diff-btn.active.medio { background: rgba(245,158,11,.15); border-color: var(--accent3); color: var(--accent3); }
+  .gen-diff-btn.active.dificil { background: rgba(239,68,68,.15); border-color: var(--red); color: var(--red); }
+
+  .question-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 20px;
+  }
+
+  .question-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .question-tag {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: var(--surface2);
+    color: var(--accent);
+  }
+
+  .question-streak {
+    font-size: 12px;
+    color: var(--accent3);
+    font-weight: 600;
+  }
+
+  .question-text {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .question-text .q-data {
+    display: inline-block;
+    background: var(--surface2);
+    padding: 2px 8px;
+    border-radius: 6px;
+    color: var(--accent);
+    font-family: var(--mono);
+    font-weight: 600;
+    margin: 2px 0;
+  }
+
+  .answer-input-area {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .answer-input-area input {
+    background: var(--surface2);
+    border: 2px solid var(--border);
+    color: var(--text);
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: var(--mono);
+    width: 180px;
+    outline: none;
+    transition: border-color .2s;
+  }
+
+  .answer-input-area input:focus { border-color: var(--accent); }
+  .answer-input-area .unit-label { color: var(--text3); font-size: 14px; }
+
+  .btn-verify {
+    background: var(--accent);
+    color: var(--bg);
+    border: none;
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .2s;
+  }
+
+  .btn-verify:hover { background: #00b8d9; transform: translateY(-1px); }
+
+  .btn-next {
+    background: var(--accent2);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    display: none;
+  }
+
+  .btn-next:hover { background: #6b2fd6; }
+
+  .feedback-panel {
+    margin-top: 20px;
+    border-radius: 12px;
+    padding: 20px 24px;
+    display: none;
+  }
+
+  .feedback-panel.correct {
+    display: block;
+    background: rgba(16,185,129,.08);
+    border: 1px solid rgba(16,185,129,.25);
+  }
+
+  .feedback-panel.wrong {
+    display: block;
+    background: rgba(239,68,68,.08);
+    border: 1px solid rgba(239,68,68,.25);
+  }
+
+  .feedback-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .feedback-panel.correct .feedback-title { color: var(--green); }
+  .feedback-panel.wrong .feedback-title { color: var(--red); }
+
+  .feedback-steps {
+    font-size: 13.5px;
+    color: var(--text2);
+    line-height: 1.8;
+    font-family: var(--mono);
+  }
+
+  .feedback-steps .fs-line { margin-bottom: 4px; }
+  .feedback-steps .fs-result { color: var(--accent); font-weight: 700; font-size: 15px; }
+
+  /* SIMULADO */
+  .sim-setup {
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .sim-setup .sim-icon { font-size: 56px; margin-bottom: 16px; }
+  .sim-setup h3 { font-size: 22px; margin-bottom: 10px; }
+  .sim-setup p { color: var(--text2); margin-bottom: 24px; max-width: 420px; margin-left: auto; margin-right: auto; }
+
+  .btn-start-sim {
+    background: var(--accent3);
+    color: var(--bg);
+    border: none;
+    padding: 14px 36px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .btn-start-sim:hover { background: #e0930a; }
+
+  .sim-timer-bar {
+    position: sticky;
+    top: 56px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+  }
+
+  .sim-timer { font-family: var(--mono); font-size: 20px; font-weight: 700; color: var(--accent3); }
+  .sim-progress-text { font-size: 13px; color: var(--text2); }
+
+  .sim-results {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .sim-score-circle {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 8px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    flex-direction: column;
+  }
+
+  .sim-score-circle .pct { font-size: 36px; font-weight: 800; font-family: var(--mono); }
+  .sim-score-circle .lbl { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: .5px; }
+
+  .sim-review-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 10px;
+    text-align: left;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .sim-review-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+  .sim-review-body { flex: 1; }
+  .sim-review-body .sr-q { font-size: 13.5px; margin-bottom: 4px; }
+  .sim-review-body .sr-a { font-size: 12.5px; color: var(--text3); font-family: var(--mono); }
+
+  /* ESTATÍSTICAS */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .stat-card .stat-icon { font-size: 24px; margin-bottom: 8px; }
+  .stat-card .stat-value { font-size: 26px; font-weight: 800; font-family: var(--mono); color: var(--accent); }
+  .stat-card .stat-label { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: .5px; margin-top: 4px; }
+
+  .badge-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 14px;
+    margin: 16px 0;
+  }
+
+  .medal-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 10px;
+    text-align: center;
+    transition: all .2s;
+  }
+
+  .medal-item.locked { opacity: .35; filter: grayscale(1); }
+  .medal-item .medal-icon { font-size: 30px; margin-bottom: 6px; }
+  .medal-item .medal-name { font-size: 11px; font-weight: 600; }
+  .medal-item .medal-desc { font-size: 9.5px; color: var(--text3); margin-top: 2px; }
+
+  .topic-error-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .topic-error-bar .topic-name { font-size: 13px; width: 140px; flex-shrink: 0; color: var(--text2); }
+  .topic-error-bar .topic-bar-track { flex: 1; height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+  .topic-error-bar .topic-bar-fill { height: 100%; border-radius: 4px; }
+  .topic-error-bar .topic-pct { font-size: 12px; font-family: var(--mono); width: 40px; text-align: right; color: var(--text3); }
+
+  .btn-reset-stats {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text3);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-top: 12px;
+  }
+
+  .btn-reset-stats:hover { border-color: var(--red); color: var(--red); }
+
+  @media (max-width: 768px) {
+    .gen-header { flex-direction: column; align-items: stretch; }
+    .answer-input-area { flex-direction: column; align-items: stretch; }
+    .answer-input-area input { width: 100%; }
+    .question-card { padding: 20px; }
+  }
 </style>
 </head>
 <body>
@@ -695,6 +1234,16 @@
   <div class="sidebar-logo">
     <div class="brand">⚡ AcionaLab</div>
     <div class="sub">Automação Industrial</div>
+  </div>
+
+  <div class="xp-panel">
+    <div class="xp-panel-top">
+      <div class="xp-level-badge"><span class="lvl-icon">🏆</span> <span id="sidebar-level">Nível 1</span></div>
+      <div class="xp-count"><span id="sidebar-xp">0</span> XP</div>
+    </div>
+    <div class="xp-progress-track">
+      <div class="xp-progress-fill" id="sidebar-xp-fill" style="width:0%"></div>
+    </div>
   </div>
 
   <div class="search-box">
@@ -754,6 +1303,28 @@
   </div>
 
   <div class="nav-section">
+    <div class="nav-label">Matemática Aplicada</div>
+    <a class="nav-item" onclick="showPage('mat-divisao')">
+      <span class="icon">➗</span> 1. Aprendendo a Dividir
+    </a>
+    <a class="nav-item" onclick="showPage('mat-raiz')">
+      <span class="icon">√</span> 2. Raiz Quadrada
+    </a>
+    <a class="nav-item" onclick="showPage('mat-fracoes')">
+      <span class="icon">🍕</span> 3. Frações
+    </a>
+    <a class="nav-item" onclick="showPage('mat-porcentagem')">
+      <span class="icon">💯</span> 4. Porcentagem
+    </a>
+    <a class="nav-item" onclick="showPage('mat-regra3')">
+      <span class="icon">⚖️</span> 5. Regra de Três
+    </a>
+    <a class="nav-item" onclick="showPage('mat-macetes')">
+      <span class="icon">🧩</span> 6. Macetes e Atalhos
+    </a>
+  </div>
+
+  <div class="nav-section">
     <div class="nav-label">Praticar</div>
     <a class="nav-item" onclick="showPage('exercicios')">
       <span class="icon">🏋️</span> Exercícios <span class="badge">45</span>
@@ -761,8 +1332,20 @@
     <a class="nav-item" onclick="showPage('simulador')">
       <span class="icon">🧮</span> Simulador
     </a>
+    <a class="nav-item" onclick="showPage('gerador')">
+      <span class="icon">🎲</span> Gerador de Exercícios <span class="badge">3500+</span>
+    </a>
+    <a class="nav-item" onclick="showPage('simulado')">
+      <span class="icon">⏱️</span> Simulado
+    </a>
+    <a class="nav-item" onclick="showPage('treino-infinito')">
+      <span class="icon">♾️</span> Treino Infinito
+    </a>
     <a class="nav-item" onclick="showPage('mapa-mental')">
       <span class="icon">🗺️</span> Mapa Mental
+    </a>
+    <a class="nav-item" onclick="showPage('estatisticas')">
+      <span class="icon">📊</span> Estatísticas
     </a>
   </div>
 </nav>
@@ -1448,6 +2031,512 @@
         <div class="tip-body">
           <strong>Quando usar o fator de potência?</strong>
           <p>Sempre que houver motores, transformadores ou lâmpadas fluorescentes (cargas indutivas). Para chuveiro, resistência de forno ou lâmpada incandescente (cargas resistivas), o FP = 1 e pode ser omitido.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAT DIVISAO -->
+    <div class="page" id="page-mat-divisao">
+      <h2 class="section-title">Módulo 1 — Aprendendo a Dividir</h2>
+      <p class="desc">A divisão é a base de quase toda fórmula elétrica. Se você dominar dividir bem, 80% das contas de automação ficam fáceis. Vamos do zero.</p>
+
+      <h3 class="sub-title">O que é dividir, de verdade?</h3>
+      <div class="analogy">
+        <div class="icon-big">🍕</div>
+        <div class="text">
+          <strong>Pense em Pizza</strong>
+          <p>Dividir é "repartir igualmente". Se você tem 12 pedaços de pizza e quer dividir entre 4 amigos, cada um recebe 12 ÷ 4 = 3 pedaços. Em elétrica é a mesma lógica: "Eu tenho 2.200 W de potência e quero saber quanto de corrente isso representa para cada Volt." A divisão sempre responde: <em>"quanto cabe X vezes dentro de Y?"</em></p>
+        </div>
+      </div>
+
+      <h3 class="sub-title">Divisão Simples — Passo a Passo</h3>
+      <div class="math-step-visual">
+        <div class="division-anim">
+          <div class="division-box"><div class="num">84</div><div class="lbl">Dividendo</div></div>
+          <div class="division-op">÷</div>
+          <div class="division-box"><div class="num">4</div><div class="lbl">Divisor</div></div>
+          <div class="division-op">=</div>
+          <div class="division-box" style="border-color:var(--accent)"><div class="num" style="color:var(--accent)">21</div><div class="lbl">Quociente</div></div>
+        </div>
+      </div>
+      <div class="step-box">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content"><strong>Pergunte: quantas vezes o 4 cabe no 8?</strong><p>4 cabe 2 vezes em 8 (4×2=8). Escreva "2" e desça o próximo número.</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content"><strong>Agora: quantas vezes o 4 cabe no 4?</strong><p>4 cabe exatamente 1 vez. Escreva "1". Resultado: 21.</p></div>
+        </div>
+      </div>
+
+      <h3 class="sub-title">Divisão com Vírgula (Resultado Decimal)</h3>
+      <p class="desc">Quando a divisão não é exata, o resultado continua com vírgula. Isso é extremamente comum em elétrica!</p>
+      <div class="formula-box" style="font-size:16px">
+        220 ÷ 8 = 27,5
+        <div class="var-list">Sobrou resto 4. Acrescente uma vírgula e um zero: 40 ÷ 8 = 5. Resultado: 27,5</div>
+      </div>
+
+      <div class="analogy">
+        <div class="icon-big">💡</div>
+        <div class="text">
+          <strong>Macete Rápido</strong>
+          <p>Quando o resto não é zero, multiplique o resto por 10 e continue dividindo, colocando a vírgula no resultado no momento em que você "completar" o número inteiro. Em uma calculadora, isso é automático — mas entender o processo ajuda a verificar se o resultado faz sentido.</p>
+        </div>
+      </div>
+
+      <h3 class="sub-title">Divisão por 10, 100 e 1000</h3>
+      <div class="card accent-border">
+        <p class="desc" style="margin:0 0 10px">Esse é o macete mais usado em conversões elétricas (W → kW, mA → A, etc):</p>
+        <table>
+          <tr><th>Operação</th><th>O que fazer</th><th>Exemplo</th></tr>
+          <tr><td>÷ 10</td><td>Mover a vírgula 1 casa p/ esquerda</td><td>1.500 ÷ 10 = 150,0 → 150</td></tr>
+          <tr><td>÷ 100</td><td>Mover a vírgula 2 casas p/ esquerda</td><td>1.500 ÷ 100 = 15,00 → 15</td></tr>
+          <tr><td>÷ 1000</td><td>Mover a vírgula 3 casas p/ esquerda</td><td>1.500 ÷ 1000 = 1,500 → 1,5</td></tr>
+        </table>
+        <p class="desc" style="margin:10px 0 0"><strong>Aplicação real:</strong> 7.360 W ÷ 1000 = 7,36 kW. Você faz isso toda vez que converte unidades!</p>
+      </div>
+
+      <h3 class="sub-title">Divisão de Números Grandes</h3>
+      <p class="desc">Em fórmulas trifásicas, você frequentemente divide por um número "composto", como (1,732 × 380 × 0,85 × 0,90). A dica é: <strong>resolva o denominador inteiro primeiro</strong>, depois faça uma única divisão.</p>
+      <div class="step-box">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content"><strong>Calcule o denominador completo</strong><p>1,732 × 380 × 0,85 × 0,90 = 503,6 (multiplique em sequência, dois números por vez)</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content"><strong>Divida o numerador por esse valor único</strong><p>7.360 ÷ 503,6 = 14,6 A</p></div>
+        </div>
+      </div>
+
+      <h3 class="sub-title">Divisão na Prática Elétrica</h3>
+      <div class="card green-border">
+        <p class="desc" style="margin:0">A fórmula de corrente <code style="color:var(--accent)">I = P / (V × FP × η)</code> é, no fundo, uma grande divisão. O numerador (P) é "o que eu tenho de potência". O denominador é "o efeito combinado de tensão, eficiência elétrica e magnética". Dividir um pelo outro me diz quantos Ampères circulam.</p>
+      </div>
+
+      <h3 class="sub-title">⚠️ Erros Comuns na Divisão</h3>
+      <div class="error-common">
+        <div class="err-icon">❌</div>
+        <div><strong>Dividir na ordem errada</strong><p>P ÷ V é diferente de V ÷ P! Sempre o que eu "tenho/quero saber" fica em cima (numerador), o que "divide/reparte" fica embaixo (denominador).</p></div>
+      </div>
+      <div class="error-common">
+        <div class="err-icon">❌</div>
+        <div><strong>Esquecer de multiplicar tudo o denominador antes de dividir</strong><p>Em I = P/(V×FP×η), o aluno divide só por V e esquece de multiplicar por FP e η também.</p></div>
+      </div>
+      <div class="error-common">
+        <div class="err-icon">❌</div>
+        <div><strong>Errar a posição da vírgula</strong><p>22,08 ÷ 1000 não é 2,208 nem 0,02208 — é 0,02208... espera, são 3 casas: 22,08 → 0,02208. Conte as casas com cuidado!</p></div>
+      </div>
+
+      <h3 class="sub-title">🎯 Exercite-se</h3>
+      <div class="mini-exercise">
+        <div class="mini-q">1) Quanto é 7.360 ÷ 1000? (resultado em kW)</div>
+        <div class="mini-input-row">
+          <input type="text" id="mini-div-1" placeholder="Sua resposta">
+          <button onclick="checkMini('mini-div-1', 7.36, 'mini-fb-div-1')">Verificar</button>
+        </div>
+        <div class="mini-feedback" id="mini-fb-div-1"></div>
+      </div>
+      <div class="mini-exercise">
+        <div class="mini-q">2) Quanto é 18.400 ÷ 8? (divisão exata)</div>
+        <div class="mini-input-row">
+          <input type="text" id="mini-div-2" placeholder="Sua resposta">
+          <button onclick="checkMini('mini-div-2', 2300, 'mini-fb-div-2')">Verificar</button>
+        </div>
+        <div class="mini-feedback" id="mini-fb-div-2"></div>
+      </div>
+      <div class="mini-exercise">
+        <div class="mini-q">3) Um motor de 3.680W a 220V (FP=1, η=1). Calcule I = P/V.</div>
+        <div class="mini-input-row">
+          <input type="text" id="mini-div-3" placeholder="Sua resposta em A">
+          <button onclick="checkMini('mini-div-3', 16.73, 'mini-fb-div-3', 0.05)">Verificar</button>
+        </div>
+        <div class="mini-feedback" id="mini-fb-div-3"></div>
+      </div>
+    </div>
+
+    <!-- MAT RAIZ -->
+    <div class="page" id="page-mat-raiz">
+      <h2 class="section-title">Módulo 2 — Raiz Quadrada</h2>
+      <p class="desc">A raiz quadrada aparece toda hora em elétrica — especialmente o famoso <strong>√3 = 1,732</strong> dos sistemas trifásicos. Vamos entender de onde ela vem e como calculá-la sem medo.</p>
+
+      <h3 class="sub-title">O que é Raiz Quadrada?</h3>
+      <div class="analogy">
+        <div class="icon-big">⬜</div>
+        <div class="text">
+          <strong>Pense em um Quadrado</strong>
+          <p>Se um quadrado tem área de 25 m², qual é o tamanho do lado? A resposta é a raiz quadrada de 25, que é 5 (porque 5×5=25). A raiz quadrada "desfaz" uma multiplicação de um número por ele mesmo.</p>
+        </div>
+      </div>
+
+      <div class="formula-box">
+        √25 = 5 &nbsp;&nbsp;&nbsp; porque &nbsp;&nbsp;&nbsp; 5 × 5 = 25
+      </div>
+
+      <h3 class="sub-title">Como Descobrir Sem Calculadora</h3>
+      <div class="step-box">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content"><strong>Encontre os dois "quadrados perfeitos" mais próximos</strong><p>Quero √50. Sei que 7×7=49 e 8×8=64. Então √50 está entre 7 e 8.</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content"><strong>Veja o quão perto está de cada um</strong><p>50 está bem perto de 49 (diferença de 1) e mais longe de 64 (diferença de 14). Então a raiz deve ser perto de 7, algo como 7,1.</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content"><strong>Resultado real: √50 ≈ 7,07</strong><p>Sua estimativa de "perto de 7,1" já estava ótima!</p></div>
+        </div>
+      </div>
+
+      <div class="card accent-border">
+        <h4 style="color:var(--accent); margin-bottom:10px">📋 Quadrados Perfeitos para Memorizar</h4>
+        <table>
+          <tr><th>n</th><th>n²</th><th>n</th><th>n²</th></tr>
+          <tr><td>1</td><td>1</td><td>6</td><td>36</td></tr>
+          <tr><td>2</td><td>4</td><td>7</td><td>49</td></tr>
+          <tr><td>3</td><td>9</td><td>8</td><td>64</td></tr>
+          <tr><td>4</td><td>16</td><td>9</td><td>81</td></tr>
+          <tr><td>5</td><td>25</td><td>10</td><td>100</td></tr>
+        </table>
+        <p class="desc" style="margin-top:10px; margin-bottom:0">Decorando esses 10, você consegue estimar qualquer raiz quadrada rapidamente!</p>
+      </div>
+
+      <h3 class="sub-title">Por que aparece √2 e √3 na elétrica?</h3>
+      <div class="card purple-border">
+        <h4 style="color:var(--accent2); margin-bottom:10px">⚡ De onde vem o √3 = 1,732</h4>
+        <p class="desc">Em um sistema trifásico, temos 3 fases defasadas entre si em <strong>120°</strong>. Quando calculamos a relação entre a tensão de linha (entre duas fases) e a tensão de fase (entre uma fase e o neutro), aparece naturalmente um fator de √3.</p>
+        <p class="desc" style="margin:0">Matematicamente, isso vem da trigonometria: a diferença vetorial entre duas tensões senoidais defasadas 120° resulta em uma amplitude multiplicada por √3 ≈ 1,732. Você não precisa provar isso na prova — só saber que <strong style="color:var(--accent)">todo sistema trifásico usa esse fator</strong>.</p>
+      </div>
+
+      <div class="card yellow-border">
+        <h4 style="color:var(--accent3); margin-bottom:10px">⚡ De onde vem o √2 = 1,414</h4>
+        <p class="desc" style="margin:0">O √2 aparece quando convertemos valores de <strong>pico</strong> para valores <strong>RMS (eficaz)</strong> em corrente alternada. A tensão "230V" da rede, por exemplo, é o valor eficaz — o valor de pico real chega a 230 × √2 ≈ 325V. Isso é importante para dimensionar isolamento de cabos e capacitores.</p>
+      </div>
+
+      <h3 class="sub-title">Exemplo Prático: Calculando Corrente Trifásica</h3>
+      <div class="card green-border">
+        <p class="desc">Motor de 10 CV, 380V, FP=0,85, η=0,90. Use √3 ≈ 1,732:</p>
+        <div class="formula-box" style="font-size:15px">I = 7.360 / (1,732 × 380 × 0,85 × 0,90) = 7.360 / 503,6 ≈ 14,6 A</div>
+        <p class="desc" style="margin:0">Veja que o √3 simplesmente entra como mais um número multiplicando o denominador. Trate-o como uma constante: 1,732.</p>
+      </div>
+
+      <h3 class="sub-title">🎯 Exercite-se</h3>
+      <div class="mini-exercise">
+        <div class="mini-q">1) Qual é a raiz quadrada de 64?</div>
+        <div class="mini-input-row">
+          <input type="text" id="mini-raiz-1" placeholder="Sua resposta">
+          <button onclick="checkMini('mini-raiz-1', 8, 'mini-fb-raiz-1')">Verificar</button>
+        </div>
+        <div class="mini-feedback" id="mini-fb-raiz-1"></div>
+      </div>
+      <div class="mini-exercise">
+        <div class="mini-q">2) Em sistemas trifásicos, qual é o valor aproximado de √3?</div>
+        <div class="mini-input-row">
+          <input type="text" id="mini-raiz-2" placeholder="Sua resposta">
+          <button onclick="checkMini('mini-raiz-2', 1.732, 'mini-fb-raiz-2', 0.01)">Verificar</button>
+        </div>
+        <div class="mini-feedback" id="mini-fb-raiz-2"></div>
+      </div>
+      <div class="mini-exercise">
+        <div class="mini-q">3) Estime: entre quais dois números inteiros está √90?</div>
+        <div class="mini-input-row">
+          <input type="text" id="mini-raiz-3" placeholder="Ex: 9 e 10">
+          <button onclick="checkMiniText('mini-raiz-3', ['9 e 10','9,10','entre 9 e 10'], 'mini-fb-raiz-3')">Verificar</button>
+        </div>
+        <div class="mini-feedback" id="mini-fb-raiz-3"></div>
+      </div>
+    </div>
+
+    <!-- MAT FRACOES -->
+    <div class="page" id="page-mat-fracoes">
+      <h2 class="section-title">Módulo 3 — Frações</h2>
+      <p class="desc">Frações aparecem em desenhos técnicos (3/4", 1/2"), em proporções de engrenagens e em fórmulas elétricas. Vamos relembrar o básico com aplicação real.</p>
+
+      <h3 class="sub-title">O que é uma fração?</h3>
+      <div class="analogy">
+        <div class="icon-big">🔧</div>
+        <div class="text">
+          <strong>Pense em Parafusos e Tubos</strong>
+          <p>Quando você compra um tubo de 3/4 de polegada, está dizendo "três partes de um total de quatro". O número de cima (numerador) é quantas partes você tem. O número de baixo (denominador) é em quantas partes o todo foi dividido.</p>
+        </div>
+      </div>
+
+      <h3 class="sub-title">Soma e Subtração de Frações</h3>
+      <div class="card accent-border">
+        <p class="desc"><strong>Mesmo denominador:</strong> some/subtraia só os numeradores.</p>
+        <div class="formula-box" style="font-size:16px">1/4 + 2/4 = 3/4</div>
+        <p class="desc"><strong>Denominadores diferentes:</strong> encontre um denominador comum primeiro (MMC) e depois some.</p>
+        <div class="formula-box" style="font-size:16px">1/2 + 1/4 = 2/4 + 1/4 = 3/4</div>
+      </div>
+
+      <h3 class="sub-title">Multiplicação e Divisão de Frações</h3>
+      <div class="card purple-border">
+        <p class="desc"><strong>Multiplicar:</strong> numerador × numerador, denominador × denominador.</p>
+        <div class="formula-box" style="font-size:16px">2/3 × 3/4 = 6/12 = 1/2</div>
+        <p class="desc"><strong>Dividir:</strong> multiplique pelo inverso da segunda fração ("inverte e multiplica").</p>
+        <div class="formula-box" style="font-size:16px">2/3 ÷ 1/4 = 2/3 × 4/1 = 8/3 = 2,67</div>
+      </div>
+
+      <h3 class="sub-title">Aplicações em Medidas e Desenho Técnico</h3>
+      <div class="card green-border">
+        <p class="desc" style="margin:0">Tubulações hidráulicas e elétricas (conduítes) usam medidas fracionárias em polegadas: 1/2", 3/4", 1", 1.1/4". Para somar dois trechos de 3/4" e 1/2", você precisa do MMC entre 4 e 2 (que é 4): 3/4 + 2/4 = 5/4" = 1.1/4 polegada.</p>
+      </div>
+
+      <h3 class="sub-title">🎯 Exercite-se</h3>
+      <div class="mini-exercise">
+        <div class="mini-q">1) Quanto é 1/2 + 1/4? (resposta como decimal, ex: 0.75)</div>
+        <div class="mini-input-row">
+          <input type="text" id="mini-frac-1" placeholder="Sua resposta">
+          <button onclick="checkMini('mini-frac-1', 0.75, 'mini-fb-frac-1', 0.01)">Verificar</button>
+        </div>
+        <div class="mini-feedback" id="mini-fb-frac-1"></div>
+      </div>
+      <div class="mini-exercise">
+        <div class="mini-q">2) Quanto é 3/4 × 2/3? (resposta como decimal)</div>
+        <div class="mini-input-row">
+          <input type="text" id="mini-frac-2" placeholder="Sua resposta">
+          <button onclick="checkMini('mini-frac-2', 0.5, 'mini-fb-frac-2', 0.01)">Verificar</button>
+        </div>
+        <div class="mini-feedback" id="mini-fb-frac-2"></div>
+      </div>
+    </div>
+
+    <!-- MAT PORCENTAGEM -->
+    <div class="page" id="page-mat-porcentagem">
+      <h2 class="section-title">Módulo 4 — Porcentagem</h2>
+      <p class="desc">Rendimento, fator de potência e perdas são quase sempre expressos em porcentagem. Aprenda a calcular de cabeça, sem calculadora.</p>
+
+      <h3 class="sub-title">Regra dos 10%</h3>
+      <div class="analogy">
+        <div class="icon-big">🔢</div>
+        <div class="text">
+          <strong>O Macete Mais Útil</strong>
+          <p>Para achar 10% de qualquer número, basta mover a vírgula uma casa para a esquerda. 10% de 380 = 38. 10% de 7.360 = 736 (Ei, é o mesmo número do CV→Watts! Coincidência? Não — é só matemática.)</p>
+        </div>
+      </div>
+
+      <h3 class="sub-title">Regra dos 50%</h3>
+      <div class="card accent-border">
+        <p class="desc" style="margin:0">50% é simplesmente a metade. 50% de 220 = 110. Para 25%, divida por 4. Para 75%, calcule 50% + 25%.</p>
+      </div>
+
+      <h3 class="sub-title">Como Calcular Qualquer Porcentagem Mentalmente</h3>
+      <div class="step-box">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content"><strong>Quebre em partes fáceis (10%, 5%, 1%)</strong><p>Quero 85% de 7.360. 85% = 50% + 30% + 5%.</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content"><strong>Calcule cada parte</strong><p>50% de 7.360 = 3.680 | 30% de 7.360 = 2.208 | 5% de 7.360 = 368</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content"><strong>Some tudo</strong><p>3.680 + 2.208 + 368 = 6.256 (isso é 85% de 7.360!)</p></div>
+        </div>
+      </div>
+
+      <h3 class="sub-title">Aplicação: Rendimento (η)</h3>
+      <div class="card green-border">
+        <p class="desc">Rendimento de 90% significa que, de toda energia elétrica que entra no motor, apenas 90% sai como energia mecânica útil. Os outros 10% se perdem como calor.</p>
+        <div class="formula-box" style="font-size:15px">η = Potência útil saída / Potência total entrada</div>
+        <p class="desc" style="margin:0">Se um motor recebe 1.000W e tem η=0,90, ele entrega 900W de trabalho mecânico e perde 100W em calor.</p>
+      </div>
+
+      <h3 class="sub-title">Aplicação: Fator de Potência</h3>
+      <div class="card purple-border">
+        <p class="desc" style="margin:0">Quando dizemos "FP = 80%" ou "FP = 0,8" é a mesma coisa — só formas diferentes de escrever a mesma porcentagem. 80% da energia entregue (S) se torna trabalho útil (P).</p>
+      </div>
+
+      <h3 class="sub-title">Aplicação: Perdas em Cabos</h3>
+      <div class="card yellow-border">
+        <p class="desc" style="margin:0">Se um cabo tem 3% de perda por queda de tensão e a tensão nominal é 380V, a queda real é 380 × 0,03 = 11,4V. A tensão que chega no motor é 380 - 11,4 = 368,6V.</p>
+      </div>
+
+      <h3 class="sub-title">🎯 Exercite-se</h3>
+      <div class="mini-exercise">
+        <div class="mini-q">1) Quanto é 10% de 4.500?</div>
+        <div class="mini-input-row">
+          <input type="text" id="mini-pct-1" placeholder="Sua resposta">
+          <button onclick="checkMini('mini-pct-1', 450, 'mini-fb-pct-1')">Verificar</button>
+        </div>
+        <div class="mini-feedback" id="mini-fb-pct-1"></div>
+      </div>
+      <div class="mini-exercise">
+        <div class="mini-q">2) Um motor recebe 2.000W com η = 88%. Quantos Watts ele entrega como trabalho útil?</div>
+        <div class="mini-input-row">
+          <input type="text" id="mini-pct-2" placeholder="Sua resposta">
+          <button onclick="checkMini('mini-pct-2', 1760, 'mini-fb-pct-2')">Verificar</button>
+        </div>
+        <div class="mini-feedback" id="mini-fb-pct-2"></div>
+      </div>
+    </div>
+
+    <!-- MAT REGRA3 -->
+    <div class="page" id="page-mat-regra3">
+      <h2 class="section-title">Módulo 5 — Regra de Três</h2>
+      <p class="desc">A regra de três resolve praticamente qualquer problema de proporção: tempo de produção, corrente versus potência, escala de desenhos. Vamos dominar a simples e a composta.</p>
+
+      <h3 class="sub-title">Regra de Três Simples</h3>
+      <div class="analogy">
+        <div class="icon-big">🏭</div>
+        <div class="text">
+          <strong>Pense em Produção</strong>
+          <p>Se uma máquina produz 100 peças em 2 horas, quantas peças produz em 5 horas? Você está comparando duas grandezas que crescem juntas (proporção direta).</p>
+        </div>
+      </div>
+
+      <div class="math-step-visual">
+        <div style="text-align:center; font-size:16px; line-height:2">
+          100 peças —— 2 horas<br>
+          X peças —— 5 horas<br><br>
+          <span style="color:var(--accent)">X = (100 × 5) / 2 = 250 peças</span>
+        </div>
+      </div>
+
+      <div class="step-box">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content"><strong>Identifique se é direta ou inversa</strong><p>Direta: as duas grandezas crescem juntas (mais horas = mais peças). Inversa: uma cresce, a outra diminui (mais trabalhadores = menos tempo).</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content"><strong>Monte a proporção em cruz</strong><p>Multiplique diagonalmente (cruzado) e divida pelo valor restante.</p></div>
+        </div>
+      </div>
+
+      <h3 class="sub-title">Aplicação: Potência e Corrente</h3>
+      <div class="card accent-border">
+        <p class="desc">Se um motor de 5 CV consome 12,6 A, qual seria a corrente aproximada de um motor de 10 CV nas mesmas condições (mesma tensão, FP, η)?</p>
+        <div class="formula-box" style="font-size:15px">5 CV —— 12,6 A<br>10 CV —— X<br>X = (10 × 12,6) / 5 = 25,2 A</div>
+        <p class="desc" style="margin:0">É uma proporção direta — dobrando a potência, dobra a corrente (mantendo o resto constante).</p>
+      </div>
+
+      <h3 class="sub-title">Regra de Três Composta</h3>
+      <p class="desc">Usada quando há <strong>3 ou mais grandezas</strong> relacionadas ao mesmo tempo.</p>
+      <div class="card purple-border">
+        <p class="desc"><strong>Exemplo:</strong> 4 máquinas produzem 800 peças em 5 dias. Quantas peças 6 máquinas produzem em 8 dias?</p>
+        <div class="formula-box" style="font-size:14px">
+          4 máq. — 5 dias — 800 peças<br>
+          6 máq. — 8 dias — X peças<br><br>
+          X = 800 × (6/4) × (8/5) = 800 × 1,5 × 1,6 = 1.920 peças
+        </div>
+        <p class="desc" style="margin:0">Multiplique cada razão (sempre coerente com direta ou inversa) ao valor conhecido.</p>
+      </div>
+
+      <h3 class="sub-title">Aplicação: Tempo de Produção em Automação</h3>
+      <div class="card green-border">
+        <p class="desc" style="margin:0">Uma esteira transporta 50 caixas em 10 minutos. Se a velocidade do motor for aumentada (via inversor de frequência) de modo a transportar 50% mais rápido, em quanto tempo ela transporta 50 caixas? Resposta: 10 ÷ 1,5 = 6,67 minutos (proporção inversa entre velocidade e tempo).</p>
+      </div>
+
+      <h3 class="sub-title">🎯 Exercite-se</h3>
+      <div class="mini-exercise">
+        <div class="mini-q">1) Se 3 motores consomem 36A juntos, quanto consomem 5 motores idênticos?</div>
+        <div class="mini-input-row">
+          <input type="text" id="mini-r3-1" placeholder="Sua resposta">
+          <button onclick="checkMini('mini-r3-1', 60, 'mini-fb-r3-1')">Verificar</button>
+        </div>
+        <div class="mini-feedback" id="mini-fb-r3-1"></div>
+      </div>
+      <div class="mini-exercise">
+        <div class="mini-q">2) Uma esteira faz 100 peças em 4 horas. Quantas horas leva para fazer 250 peças?</div>
+        <div class="mini-input-row">
+          <input type="text" id="mini-r3-2" placeholder="Sua resposta">
+          <button onclick="checkMini('mini-r3-2', 10, 'mini-fb-r3-2')">Verificar</button>
+        </div>
+        <div class="mini-feedback" id="mini-fb-r3-2"></div>
+      </div>
+    </div>
+
+    <!-- MAT MACETES -->
+    <div class="page" id="page-mat-macetes">
+      <h2 class="section-title">Módulo 6 — Macetes e Atalhos</h2>
+      <p class="desc">Para cada fórmula importante, veja a versão oficial, como decorar rapidamente, como raciocinar sem decorar, e os erros mais comuns.</p>
+
+      <div class="macete-card">
+        <h3 style="color:var(--accent); margin-bottom:6px">⚡ Corrente de Motor Trifásico</h3>
+        <div class="macete-formula">I = P / (√3 × V × FP × η)</div>
+        <div class="macete-row decorar">
+          <div class="macete-tag">Decorar</div>
+          <p>Pense na frase: "Potência dividido por Raiz-de-3, Vezes, Fator, vezes Eficiência" — "PR-VFE".</p>
+        </div>
+        <div class="macete-row raciocinio">
+          <div class="macete-tag">Raciocínio</div>
+          <p>A corrente é "quanto eu preciso puxar da rede" para entregar a potência P. O denominador representa todas as "perdas e ajustes" do caminho: o fator trifásico (√3), a tensão disponível (V), a eficiência elétrica (FP) e a eficiência mecânica (η). Quanto maior o denominador, menor a corrente necessária.</p>
+        </div>
+        <div class="macete-row erro">
+          <div class="macete-tag">Erro comum</div>
+          <p>Esquecer de converter CV para Watts antes de aplicar a fórmula, ou esquecer o √3 quando o sistema é trifásico.</p>
+        </div>
+      </div>
+
+      <div class="macete-card">
+        <h3 style="color:var(--accent3); margin-bottom:6px">🔋 Fator de Potência</h3>
+        <div class="macete-formula">FP = P / S</div>
+        <div class="macete-row decorar">
+          <div class="macete-tag">Decorar</div>
+          <p>"FP é sempre Ativa sobre Aparente" — a letra que vem primeiro no alfabeto (A de Ativa) fica em cima.</p>
+        </div>
+        <div class="macete-row raciocinio">
+          <div class="macete-tag">Raciocínio</div>
+          <p>FP mede "quanto da energia total entregue é realmente útil". Como a energia útil nunca pode ser maior que a total, o FP é sempre ≤ 1.</p>
+        </div>
+        <div class="macete-row erro">
+          <div class="macete-tag">Erro comum</div>
+          <p>Inverter a fração (fazer S/P) — isso daria um valor maior que 1, o que é impossível para FP.</p>
+        </div>
+      </div>
+
+      <div class="macete-card">
+        <h3 style="color:var(--accent2); margin-bottom:6px">📐 Potência Reativa (Pitágoras)</h3>
+        <div class="macete-formula">Q = √(S² − P²)</div>
+        <div class="macete-row decorar">
+          <div class="macete-tag">Decorar</div>
+          <p>É só Pitágoras: "o cateto que falta é a raiz da diferença dos quadrados". S é a hipotenusa (sempre o maior lado).</p>
+        </div>
+        <div class="macete-row raciocinio">
+          <div class="macete-tag">Raciocínio</div>
+          <p>Como P, Q e S formam um triângulo retângulo, sempre que souber dois lados, acha o terceiro com Pitágoras. S é sempre o maior valor (hipotenusa).</p>
+        </div>
+        <div class="macete-row erro">
+          <div class="macete-tag">Erro comum</div>
+          <p>Somar P² + S² em vez de subtrair, ou esquecer de tirar a raiz quadrada no final.</p>
+        </div>
+      </div>
+
+      <div class="macete-card">
+        <h3 style="color:var(--green); margin-bottom:6px">🔢 Conversão CV → Watts</h3>
+        <div class="macete-formula">P(W) = CV × 736</div>
+        <div class="macete-row decorar">
+          <div class="macete-tag">Decorar</div>
+          <p>"Setecentos e trinta e seis" — repita em voz alta 3 vezes antes da prova. É só esse número!</p>
+        </div>
+        <div class="macete-row raciocinio">
+          <div class="macete-tag">Raciocínio</div>
+          <p>1 CV é a potência aproximada que um cavalo de força consegue gerar continuamente. Os engenheiros do século XIX padronizaram esse valor como 736 Watts.</p>
+        </div>
+        <div class="macete-row erro">
+          <div class="macete-tag">Erro comum</div>
+          <p>Confundir CV (cavalo-vapor, padrão métrico) com HP (horsepower, padrão imperial, que vale 746W — ligeiramente diferente!).</p>
+        </div>
+      </div>
+
+      <div class="macete-card">
+        <h3 style="color:var(--red); margin-bottom:6px">🌀 Velocidade Síncrona do Motor</h3>
+        <div class="macete-formula">n = (120 × f) / p</div>
+        <div class="macete-row decorar">
+          <div class="macete-tag">Decorar</div>
+          <p>"120 vezes frequência, dividido por polos" — o 120 vem de 60 segundos × 2 (cada ciclo tem 2 alternâncias).</p>
+        </div>
+        <div class="macete-row raciocinio">
+          <div class="macete-tag">Raciocínio</div>
+          <p>Mais polos = motor "mais pesado" para girar magneticamente = velocidade mais baixa. Mais frequência (Hz) = campo girando mais rápido = motor mais rápido.</p>
+        </div>
+        <div class="macete-row erro">
+          <div class="macete-tag">Erro comum</div>
+          <p>Usar o número de polos errado — um motor "de 4 polos" tem p=4, não p=2 (mesmo tendo 2 pares de polos).</p>
         </div>
       </div>
     </div>
@@ -2193,6 +3282,144 @@
       </div>
     </div>
 
+    <!-- GERADOR DE EXERCICIOS -->
+    <div class="page" id="page-gerador">
+      <h2 class="section-title">Gerador Inteligente de Exercícios</h2>
+      <p class="desc">Milhares de combinações geradas com números aleatórios. Escolha o tema e a dificuldade, resolva, e só veja a resposta depois de verificar.</p>
+
+      <div class="gen-header">
+        <div class="gen-mode-tabs" id="gen-topic-tabs">
+          <div class="gen-mode-tab active" data-topic="fp" onclick="setGenTopic('fp')">Fator de Potência</div>
+          <div class="gen-mode-tab" data-topic="mono" onclick="setGenTopic('mono')">Motor Mono</div>
+          <div class="gen-mode-tab" data-topic="tri" onclick="setGenTopic('tri')">Motor Trifásico</div>
+          <div class="gen-mode-tab" data-topic="mat" onclick="setGenTopic('mat')">Matemática</div>
+        </div>
+        <div class="gen-diff-select" id="gen-diff-select">
+          <div class="gen-diff-btn active facil" data-diff="facil" onclick="setGenDiff('facil')">🟢 Fácil</div>
+          <div class="gen-diff-btn medio" data-diff="medio" onclick="setGenDiff('medio')">🟡 Médio</div>
+          <div class="gen-diff-btn dificil" data-diff="dificil" onclick="setGenDiff('dificil')">🔴 Difícil</div>
+        </div>
+      </div>
+
+      <div class="question-card" id="gen-question-card">
+        <div class="question-meta">
+          <div class="question-tag" id="gen-q-tag">Carregando...</div>
+          <div class="question-streak">🔥 Sequência: <span id="gen-streak">0</span></div>
+        </div>
+        <div class="question-text" id="gen-q-text">Clique em "Nova Questão" para começar.</div>
+        <div class="answer-input-area">
+          <input type="text" id="gen-answer-input" placeholder="Sua resposta">
+          <span class="unit-label" id="gen-unit-label"></span>
+          <button class="btn-verify" id="gen-btn-verify" onclick="verifyGenAnswer()">Verificar Resposta</button>
+          <button class="btn-next" id="gen-btn-next" onclick="generateQuestion()">Próxima Questão →</button>
+        </div>
+        <div class="feedback-panel" id="gen-feedback"></div>
+      </div>
+
+      <div style="text-align:center">
+        <button class="btn-calc" style="background:var(--surface2); color:var(--text2); border:1px solid var(--border)" onclick="generateQuestion()">🎲 Gerar Nova Questão</button>
+      </div>
+    </div>
+
+    <!-- SIMULADO -->
+    <div class="page" id="page-simulado">
+      <h2 class="section-title">Simulado — Modo Prova</h2>
+
+      <div id="sim-setup-view" class="sim-setup">
+        <div class="sim-icon">⏱️</div>
+        <h3>Pronto para o desafio?</h3>
+        <p>10 questões aleatórias misturando Fator de Potência, Motores e Matemática Aplicada. Sem ver respostas até o final. Tempo é cronometrado.</p>
+        <button class="btn-start-sim" onclick="startSimulado()">Iniciar Simulado</button>
+      </div>
+
+      <div id="sim-active-view" style="display:none">
+        <div class="sim-timer-bar">
+          <div class="sim-timer" id="sim-timer-display">00:00</div>
+          <div class="sim-progress-text">Questão <span id="sim-current-num">1</span> de 10</div>
+        </div>
+        <div class="question-card">
+          <div class="question-meta">
+            <div class="question-tag" id="sim-q-tag">—</div>
+          </div>
+          <div class="question-text" id="sim-q-text">—</div>
+          <div class="answer-input-area">
+            <input type="text" id="sim-answer-input" placeholder="Sua resposta">
+            <span class="unit-label" id="sim-unit-label"></span>
+            <button class="btn-verify" onclick="simNextQuestion()" id="sim-btn-action">Próxima →</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="sim-results-view" style="display:none" class="sim-results">
+        <div class="sim-score-circle" id="sim-score-circle">
+          <div class="pct" id="sim-score-pct">0%</div>
+          <div class="lbl">Acertos</div>
+        </div>
+        <h3 id="sim-results-title">Resultado do Simulado</h3>
+        <p id="sim-results-sub" style="color:var(--text2); margin-bottom:24px"></p>
+        <div id="sim-review-list" style="max-width:560px; margin:0 auto; text-align:left"></div>
+        <button class="btn-start-sim" style="margin-top:20px" onclick="startSimulado()">Refazer Simulado</button>
+      </div>
+    </div>
+
+    <!-- TREINO INFINITO -->
+    <div class="page" id="page-treino-infinito">
+      <h2 class="section-title">Treino Infinito</h2>
+      <p class="desc">As questões nunca acabam. Resolva no seu ritmo — cada acerto te dá XP e mantém sua sequência viva.</p>
+
+      <div class="gen-header">
+        <div class="gen-diff-select" id="ti-diff-select">
+          <div class="gen-diff-btn active facil" data-diff="facil" onclick="setTiDiff('facil')">🟢 Fácil</div>
+          <div class="gen-diff-btn medio" data-diff="medio" onclick="setTiDiff('medio')">🟡 Médio</div>
+          <div class="gen-diff-btn dificil" data-diff="dificil" onclick="setTiDiff('dificil')">🔴 Difícil</div>
+        </div>
+        <div class="question-streak">🔥 Sequência atual: <span id="ti-streak">0</span> &nbsp;|&nbsp; ✅ Resolvidas: <span id="ti-solved">0</span></div>
+      </div>
+
+      <div class="question-card" id="ti-question-card">
+        <div class="question-meta">
+          <div class="question-tag" id="ti-q-tag">Carregando...</div>
+        </div>
+        <div class="question-text" id="ti-q-text">Clique em "Começar Treino" para gerar sua primeira questão.</div>
+        <div class="answer-input-area">
+          <input type="text" id="ti-answer-input" placeholder="Sua resposta">
+          <span class="unit-label" id="ti-unit-label"></span>
+          <button class="btn-verify" id="ti-btn-verify" onclick="verifyTiAnswer()">Verificar Resposta</button>
+          <button class="btn-next" id="ti-btn-next" onclick="generateTiQuestion()">Próxima Questão →</button>
+        </div>
+        <div class="feedback-panel" id="ti-feedback"></div>
+      </div>
+    </div>
+
+    <!-- ESTATISTICAS -->
+    <div class="page" id="page-estatisticas">
+      <h2 class="section-title">Estatísticas e Evolução</h2>
+      <p class="desc">Seu progresso é salvo automaticamente no seu navegador (localStorage).</p>
+
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-icon">📝</div><div class="stat-value" id="st-total">0</div><div class="stat-label">Questões Resolvidas</div></div>
+        <div class="stat-card"><div class="stat-icon">✅</div><div class="stat-value" id="st-accuracy">0%</div><div class="stat-label">Taxa de Acerto</div></div>
+        <div class="stat-card"><div class="stat-icon">⏱️</div><div class="stat-value" id="st-avgtime">0s</div><div class="stat-label">Tempo Médio</div></div>
+        <div class="stat-card"><div class="stat-icon">🔥</div><div class="stat-value" id="st-bestreak">0</div><div class="stat-label">Maior Sequência</div></div>
+        <div class="stat-card"><div class="stat-icon">⭐</div><div class="stat-value" id="st-xp">0</div><div class="stat-label">XP Total</div></div>
+        <div class="stat-card"><div class="stat-icon">🏆</div><div class="stat-value" id="st-level">1</div><div class="stat-label">Nível Atual</div></div>
+      </div>
+
+      <h3 class="sub-title">📊 Tema com Mais Erros</h3>
+      <div class="card" id="st-topics-card">
+        <div id="st-topics-list">
+          <p class="desc" style="margin:0">Resolva algumas questões para ver suas estatísticas por tema.</p>
+        </div>
+      </div>
+
+      <h3 class="sub-title">🏅 Medalhas</h3>
+      <div class="badge-grid" id="badge-grid">
+        <!-- Filled by JS -->
+      </div>
+
+      <button class="btn-reset-stats" onclick="resetStats()">🗑️ Resetar todas as estatísticas</button>
+    </div>
+
   </div><!-- end content -->
 </main>
 
@@ -2218,9 +3445,19 @@ const breadcrumbs = {
   'motor-tabela': 'Módulo 2 › Tabela CV',
   'dicas-cotidiano': 'Módulo 3 › Cotidiano',
   'dicas-provas': 'Módulo 3 › Provas',
+  'mat-divisao': 'Matemática › Divisão',
+  'mat-raiz': 'Matemática › Raiz Quadrada',
+  'mat-fracoes': 'Matemática › Frações',
+  'mat-porcentagem': 'Matemática › Porcentagem',
+  'mat-regra3': 'Matemática › Regra de Três',
+  'mat-macetes': 'Matemática › Macetes',
   'exercicios': 'Exercícios',
   'simulador': 'Simulador',
-  'mapa-mental': 'Mapa Mental'
+  'gerador': 'Praticar › Gerador',
+  'simulado': 'Praticar › Simulado',
+  'treino-infinito': 'Praticar › Treino Infinito',
+  'mapa-mental': 'Mapa Mental',
+  'estatisticas': 'Estatísticas'
 };
 
 function showPage(id) {
@@ -2250,6 +3487,11 @@ function showPage(id) {
   // Close mobile sidebar
   document.getElementById('sidebar').classList.remove('open');
   document.getElementById('overlay').classList.remove('show');
+
+  // Page-specific initialization
+  if (id === 'estatisticas') renderStats();
+  if (id === 'gerador' && !window.__genInit) { window.__genInit = true; generateQuestion(); }
+  if (id === 'treino-infinito' && !window.__tiInit) { window.__tiInit = true; generateTiQuestion(); }
 }
 
 // TOGGLE GABARITO
@@ -2303,6 +3545,29 @@ function searchContent(q) {
     'chuveiro': 'dicas-cotidiano',
     'rendimento': 'motor-conceitos',
     'eta': 'motor-conceitos',
+    'divisão': 'mat-divisao',
+    'divisao': 'mat-divisao',
+    'dividir': 'mat-divisao',
+    'raiz': 'mat-raiz',
+    'raiz quadrada': 'mat-raiz',
+    'fração': 'mat-fracoes',
+    'fracao': 'mat-fracoes',
+    'frações': 'mat-fracoes',
+    'porcentagem': 'mat-porcentagem',
+    'regra de três': 'mat-regra3',
+    'regra de tres': 'mat-regra3',
+    'macete': 'mat-macetes',
+    'atalho': 'mat-macetes',
+    'gerador': 'gerador',
+    'simulado': 'simulado',
+    'treino': 'treino-infinito',
+    'infinito': 'treino-infinito',
+    'estatística': 'estatisticas',
+    'estatistica': 'estatisticas',
+    'xp': 'estatisticas',
+    'medalha': 'estatisticas',
+    'nível': 'estatisticas',
+    'nivel': 'estatisticas',
   };
 
   const lq = q.toLowerCase();
@@ -2386,7 +3651,634 @@ function calcTri() {
   document.getElementById('result-tri').classList.add('show');
 }
 
+// =====================================================================
+// MINI EXERCÍCIOS (dentro dos módulos de matemática)
+// =====================================================================
+function checkMini(inputId, correctVal, fbId, tolerance) {
+  tolerance = tolerance || 0.001;
+  const input = document.getElementById(inputId);
+  const fb = document.getElementById(fbId);
+  const raw = input.value.replace(',', '.').trim();
+  const val = parseFloat(raw);
+
+  if (isNaN(val)) {
+    fb.className = 'mini-feedback wrong';
+    fb.textContent = '⚠️ Digite um número válido.';
+    return;
+  }
+
+  if (Math.abs(val - correctVal) <= tolerance) {
+    fb.className = 'mini-feedback correct';
+    fb.textContent = '✅ Correto! Muito bem.';
+    addXP(5);
+  } else {
+    fb.className = 'mini-feedback wrong';
+    fb.textContent = `❌ Quase! A resposta correta é ${correctVal}.`;
+  }
+}
+
+function checkMiniText(inputId, acceptedAnswers, fbId) {
+  const input = document.getElementById(inputId);
+  const fb = document.getElementById(fbId);
+  const raw = input.value.trim().toLowerCase();
+
+  const match = acceptedAnswers.some(a => a.toLowerCase() === raw);
+
+  if (match) {
+    fb.className = 'mini-feedback correct';
+    fb.textContent = '✅ Correto! Muito bem.';
+    addXP(5);
+  } else {
+    fb.className = 'mini-feedback wrong';
+    fb.textContent = `❌ Tente novamente. Dica: ${acceptedAnswers[0]}`;
+  }
+}
+
+// =====================================================================
+// SISTEMA DE XP / NÍVEL / ESTATÍSTICAS (localStorage)
+// =====================================================================
+const STORAGE_KEY = 'acionalab_stats_v1';
+
+function loadStats() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) return JSON.parse(raw);
+  } catch (e) {}
+  return {
+    xp: 0,
+    totalQuestions: 0,
+    correctQuestions: 0,
+    bestStreak: 0,
+    currentStreak: 0,
+    totalTimeSeconds: 0,
+    timedQuestions: 0,
+    topics: {}, // { 'fp': {correct, wrong}, 'mono': {...}, ... }
+    simulados: []
+  };
+}
+
+function saveStats(s) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(s));
+  } catch (e) {}
+}
+
+let stats = loadStats();
+
+function xpForLevel(level) {
+  return level * 100; // Nível 1→2 precisa 100xp, 2→3 precisa 200xp, etc (cumulativo abaixo)
+}
+
+function getLevelInfo(xp) {
+  let level = 1;
+  let remaining = xp;
+  let needed = xpForLevel(level);
+  while (remaining >= needed) {
+    remaining -= needed;
+    level++;
+    needed = xpForLevel(level);
+  }
+  return { level, currentXp: remaining, neededXp: needed };
+}
+
+function addXP(amount) {
+  stats.xp += amount;
+  saveStats(stats);
+  updateSidebarXP();
+  return amount;
+}
+
+function recordAnswer(topic, correct, timeSeconds) {
+  stats.totalQuestions++;
+  if (correct) {
+    stats.correctQuestions++;
+    stats.currentStreak++;
+    if (stats.currentStreak > stats.bestStreak) stats.bestStreak = stats.currentStreak;
+  } else {
+    stats.currentStreak = 0;
+  }
+  if (timeSeconds) {
+    stats.totalTimeSeconds += timeSeconds;
+    stats.timedQuestions++;
+  }
+  if (!stats.topics[topic]) stats.topics[topic] = { correct: 0, wrong: 0 };
+  if (correct) stats.topics[topic].correct++; else stats.topics[topic].wrong++;
+
+  saveStats(stats);
+  updateSidebarXP();
+}
+
+function updateSidebarXP() {
+  const info = getLevelInfo(stats.xp);
+  const lvlEl = document.getElementById('sidebar-level');
+  const xpEl = document.getElementById('sidebar-xp');
+  const fillEl = document.getElementById('sidebar-xp-fill');
+  if (lvlEl) lvlEl.textContent = 'Nível ' + info.level;
+  if (xpEl) xpEl.textContent = stats.xp;
+  if (fillEl) fillEl.style.width = Math.min(100, (info.currentXp / info.neededXp) * 100) + '%';
+}
+
+const MEDALS = [
+  { id: 'primeira', icon: '🥉', name: 'Primeiro Passo', desc: '1 questão respondida', check: s => s.totalQuestions >= 1 },
+  { id: 'dez', icon: '🥈', name: 'Aquecendo', desc: '10 questões resolvidas', check: s => s.totalQuestions >= 10 },
+  { id: 'cinquenta', icon: '🥇', name: 'Dedicado', desc: '50 questões resolvidas', check: s => s.totalQuestions >= 50 },
+  { id: 'cem', icon: '🏆', name: 'Veterano', desc: '100 questões resolvidas', check: s => s.totalQuestions >= 100 },
+  { id: 'streak5', icon: '🔥', name: 'Sequência de Fogo', desc: '5 acertos seguidos', check: s => s.bestStreak >= 5 },
+  { id: 'streak15', icon: '⚡', name: 'Imparável', desc: '15 acertos seguidos', check: s => s.bestStreak >= 15 },
+  { id: 'nivel5', icon: '🌟', name: 'Nível 5', desc: 'Alcançou o nível 5', check: s => getLevelInfo(s.xp).level >= 5 },
+  { id: 'nivel10', icon: '👑', name: 'Mestre', desc: 'Alcançou o nível 10', check: s => getLevelInfo(s.xp).level >= 10 },
+  { id: 'precisao', icon: '🎯', name: 'Precisão', desc: '90%+ de acerto (mín 20 questões)', check: s => s.totalQuestions >= 20 && (s.correctQuestions/s.totalQuestions) >= 0.9 },
+];
+
+function renderStats() {
+  const info = getLevelInfo(stats.xp);
+  const accuracy = stats.totalQuestions > 0 ? Math.round((stats.correctQuestions / stats.totalQuestions) * 100) : 0;
+  const avgTime = stats.timedQuestions > 0 ? Math.round(stats.totalTimeSeconds / stats.timedQuestions) : 0;
+
+  document.getElementById('st-total').textContent = stats.totalQuestions;
+  document.getElementById('st-accuracy').textContent = accuracy + '%';
+  document.getElementById('st-avgtime').textContent = avgTime + 's';
+  document.getElementById('st-bestreak').textContent = stats.bestStreak;
+  document.getElementById('st-xp').textContent = stats.xp;
+  document.getElementById('st-level').textContent = info.level;
+
+  // Topics with errors
+  const topicNames = { fp: 'Fator de Potência', mono: 'Motor Monofásico', tri: 'Motor Trifásico', mat: 'Matemática Aplicada' };
+  const topicsList = document.getElementById('st-topics-list');
+  const topicKeys = Object.keys(stats.topics).filter(k => (stats.topics[k].correct + stats.topics[k].wrong) > 0);
+
+  if (topicKeys.length === 0) {
+    topicsList.innerHTML = '<p class="desc" style="margin:0">Resolva algumas questões para ver suas estatísticas por tema.</p>';
+  } else {
+    topicsList.innerHTML = topicKeys.map(k => {
+      const t = stats.topics[k];
+      const total = t.correct + t.wrong;
+      const errPct = Math.round((t.wrong / total) * 100);
+      const color = errPct > 50 ? 'var(--red)' : errPct > 25 ? 'var(--accent3)' : 'var(--green)';
+      return `<div class="topic-error-bar">
+        <div class="topic-name">${topicNames[k] || k}</div>
+        <div class="topic-bar-track"><div class="topic-bar-fill" style="width:${errPct}%; background:${color}"></div></div>
+        <div class="topic-pct">${errPct}%</div>
+      </div>`;
+    }).join('');
+  }
+
+  // Medals
+  const badgeGrid = document.getElementById('badge-grid');
+  badgeGrid.innerHTML = MEDALS.map(m => {
+    const unlocked = m.check(stats);
+    return `<div class="medal-item ${unlocked ? '' : 'locked'}">
+      <div class="medal-icon">${m.icon}</div>
+      <div class="medal-name">${m.name}</div>
+      <div class="medal-desc">${m.desc}</div>
+    </div>`;
+  }).join('');
+}
+
+function resetStats() {
+  if (!confirm('Tem certeza que deseja resetar TODAS as estatísticas, XP e medalhas? Esta ação não pode ser desfeita.')) return;
+  stats = { xp: 0, totalQuestions: 0, correctQuestions: 0, bestStreak: 0, currentStreak: 0, totalTimeSeconds: 0, timedQuestions: 0, topics: {}, simulados: [] };
+  saveStats(stats);
+  updateSidebarXP();
+  renderStats();
+}
+
+// =====================================================================
+// MOTOR DE GERAÇÃO DE QUESTÕES
+// =====================================================================
+function randInt(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+function randChoice(arr) { return arr[randInt(0, arr.length - 1)]; }
+function randFloat(min, max, decimals) {
+  const val = Math.random() * (max - min) + min;
+  return parseFloat(val.toFixed(decimals));
+}
+function fmt(n, decimals) {
+  decimals = decimals === undefined ? 2 : decimals;
+  return n.toLocaleString('pt-BR', { minimumFractionDigits: 0, maximumFractionDigits: decimals });
+}
+
+// ---- GERADOR: FATOR DE POTÊNCIA ----
+function genFP(diff) {
+  let v, i, fp;
+  if (diff === 'facil') {
+    v = randChoice([110, 127, 220]);
+    i = randInt(5, 20);
+    fp = randChoice([0.8, 0.85, 0.9, 1.0]);
+  } else if (diff === 'medio') {
+    v = randChoice([220, 380]);
+    i = randFloat(5, 40, 1);
+    fp = randFloat(0.65, 0.95, 2);
+  } else {
+    v = randChoice([220, 380, 440]);
+    i = randFloat(10, 100, 2);
+    fp = randFloat(0.55, 0.95, 2);
+  }
+
+  const S = v * i;
+  const P = S * fp;
+  const Q = Math.sqrt(Math.max(0, S*S - P*P));
+
+  const askWhat = randChoice(['P', 'S', 'Q', 'FP']);
+  let questionText, answer, unit, steps;
+
+  if (askWhat === 'S') {
+    questionText = `Um circuito é alimentado por <span class="q-data">${fmt(v,0)}V</span> com corrente de <span class="q-data">${fmt(i,1)}A</span>. Calcule a <strong>potência aparente (S)</strong> em VA.`;
+    answer = S;
+    unit = 'VA';
+    steps = [`S = V × I`, `S = ${fmt(v,0)} × ${fmt(i,1)}`, `S = ${fmt(S,1)} VA`];
+  } else if (askWhat === 'FP' ) {
+    questionText = `Um circuito tem potência ativa de <span class="q-data">${fmt(P,1)}W</span> e potência aparente de <span class="q-data">${fmt(S,1)}VA</span>. Calcule o <strong>Fator de Potência</strong>.`;
+    answer = fp;
+    unit = '(0 a 1)';
+    steps = [`FP = P / S`, `FP = ${fmt(P,1)} / ${fmt(S,1)}`, `FP = ${fmt(fp,3)}`];
+  } else if (askWhat === 'Q') {
+    questionText = `Um circuito possui potência ativa <span class="q-data">${fmt(P,1)}W</span> e potência aparente <span class="q-data">${fmt(S,1)}VA</span>. Calcule a <strong>potência reativa (Q)</strong> em VAr.`;
+    answer = Q;
+    unit = 'VAr';
+    steps = [`Q = √(S² − P²)`, `Q = √(${fmt(S,1)}² − ${fmt(P,1)}²)`, `Q = ${fmt(Q,1)} VAr`];
+  } else {
+    questionText = `Um circuito é alimentado por <span class="q-data">${fmt(v,0)}V</span>, corrente de <span class="q-data">${fmt(i,1)}A</span> e Fator de Potência <span class="q-data">${fmt(fp,2)}</span>. Calcule a <strong>potência ativa (P)</strong> em Watts.`;
+    answer = P;
+    unit = 'W';
+    steps = [`P = V × I × FP`, `P = ${fmt(v,0)} × ${fmt(i,1)} × ${fmt(fp,2)}`, `P = ${fmt(P,1)} W`];
+  }
+
+  return { questionText, answer, unit, steps, topic: 'fp', tolerance: Math.max(0.5, Math.abs(answer)*0.02) };
+}
+
+// ---- GERADOR: MOTOR MONOFÁSICO ----
+function genMono(diff) {
+  let cv, v, fp, eta;
+  if (diff === 'facil') {
+    cv = randChoice([1, 2, 3, 5]);
+    v = randChoice([127, 220]);
+    fp = randChoice([0.8, 0.85, 0.9]);
+    eta = randChoice([0.85, 0.9]);
+  } else if (diff === 'medio') {
+    cv = randChoice([2, 3, 5, 7.5, 10]);
+    v = randChoice([110, 127, 220]);
+    fp = randFloat(0.75, 0.92, 2);
+    eta = randFloat(0.82, 0.93, 2);
+  } else {
+    cv = randChoice([5, 7.5, 10, 15, 20]);
+    v = randChoice([127, 220]);
+    fp = randFloat(0.7, 0.9, 2);
+    eta = randFloat(0.8, 0.94, 2);
+  }
+
+  const P = cv * 736;
+  const I = P / (v * fp * eta);
+
+  const questionText = `Motor monofásico de <span class="q-data">${fmt(cv,1)} CV</span>, alimentado em <span class="q-data">${fmt(v,0)}V</span>, com Fator de Potência <span class="q-data">${fmt(fp,2)}</span> e Rendimento <span class="q-data">${fmt(eta*100,0)}%</span>. Calcule a <strong>corrente nominal</strong> em Ampères.`;
+
+  const steps = [
+    `P = ${fmt(cv,1)} × 736 = ${fmt(P,0)} W`,
+    `I = P / (V × FP × η)`,
+    `I = ${fmt(P,0)} / (${fmt(v,0)} × ${fmt(fp,2)} × ${fmt(eta,2)})`,
+    `I = ${fmt(P,0)} / ${fmt(v*fp*eta,2)}`,
+    `I = ${fmt(I,2)} A`
+  ];
+
+  return { questionText, answer: I, unit: 'A', steps, topic: 'mono', tolerance: Math.max(0.1, I*0.02) };
+}
+
+// ---- GERADOR: MOTOR TRIFÁSICO ----
+function genTri(diff) {
+  let cv, v, fp, eta;
+  if (diff === 'facil') {
+    cv = randChoice([3, 5, 7.5, 10]);
+    v = randChoice([220, 380]);
+    fp = randChoice([0.8, 0.85, 0.9]);
+    eta = randChoice([0.85, 0.9]);
+  } else if (diff === 'medio') {
+    cv = randChoice([5, 7.5, 10, 15, 20]);
+    v = randChoice([220, 380, 440]);
+    fp = randFloat(0.78, 0.92, 2);
+    eta = randFloat(0.85, 0.94, 2);
+  } else {
+    cv = randChoice([10, 15, 20, 25, 30, 50]);
+    v = randChoice([380, 440]);
+    fp = randFloat(0.7, 0.92, 2);
+    eta = randFloat(0.85, 0.95, 2);
+  }
+
+  const P = cv * 736;
+  const sqrt3 = 1.732;
+  const I = P / (sqrt3 * v * fp * eta);
+
+  const questionText = `Motor trifásico de <span class="q-data">${fmt(cv,1)} CV</span>, <span class="q-data">${fmt(v,0)}V</span>, Fator de Potência <span class="q-data">${fmt(fp,2)}</span> e Rendimento <span class="q-data">${fmt(eta*100,0)}%</span>. Calcule a <strong>corrente nominal</strong> em Ampères.`;
+
+  const steps = [
+    `P = ${fmt(cv,1)} × 736 = ${fmt(P,0)} W`,
+    `I = P / (√3 × V × FP × η)`,
+    `I = ${fmt(P,0)} / (1,732 × ${fmt(v,0)} × ${fmt(fp,2)} × ${fmt(eta,2)})`,
+    `I = ${fmt(P,0)} / ${fmt(sqrt3*v*fp*eta,2)}`,
+    `I = ${fmt(I,2)} A`
+  ];
+
+  return { questionText, answer: I, unit: 'A', steps, topic: 'tri', tolerance: Math.max(0.1, I*0.02) };
+}
+
+// ---- GERADOR: MATEMÁTICA APLICADA ----
+function genMat(diff) {
+  const type = randChoice(['divisao', 'porcentagem', 'regra3', 'cv']);
+
+  if (type === 'divisao') {
+    let a, b;
+    if (diff === 'facil') { b = randInt(2, 10); a = b * randInt(2, 20); }
+    else if (diff === 'medio') { a = randInt(100, 9999); b = randInt(2, 50); }
+    else { a = randFloat(100, 99999, 1); b = randFloat(2, 99, 2); }
+
+    const result = a / b;
+    return {
+      questionText: `Calcule: <span class="q-data">${fmt(a,2)}</span> ÷ <span class="q-data">${fmt(b,2)}</span> = ?`,
+      answer: result, unit: '', topic: 'mat', tolerance: Math.max(0.01, Math.abs(result)*0.01),
+      steps: [`${fmt(a,2)} ÷ ${fmt(b,2)}`, `= ${fmt(result,3)}`]
+    };
+  }
+
+  if (type === 'porcentagem') {
+    const pct = diff === 'facil' ? randChoice([10,20,25,50]) : diff === 'medio' ? randInt(5,95) : randFloat(1,99,1);
+    const base = diff === 'facil' ? randInt(10,500)*10 : randInt(100, 50000);
+    const result = (base * pct) / 100;
+    return {
+      questionText: `Calcule <span class="q-data">${fmt(pct,1)}%</span> de <span class="q-data">${fmt(base,0)}</span>.`,
+      answer: result, unit: '', topic: 'mat', tolerance: Math.max(0.5, Math.abs(result)*0.01),
+      steps: [`${fmt(pct,1)}% de ${fmt(base,0)}`, `= ${fmt(base,0)} × (${fmt(pct,1)}/100)`, `= ${fmt(result,2)}`]
+    };
+  }
+
+  if (type === 'regra3') {
+    const a1 = randInt(2,10), b1 = randInt(10,200);
+    const a2 = randInt(2,20);
+    const result = (a2 * b1) / a1;
+    return {
+      questionText: `Se <span class="q-data">${a1}</span> motores consomem <span class="q-data">${b1}A</span> juntos, quanto consomem <span class="q-data">${a2}</span> motores idênticos nas mesmas condições?`,
+      answer: result, unit: 'A', topic: 'mat', tolerance: Math.max(0.1, Math.abs(result)*0.01),
+      steps: [`${a1} motores —— ${b1}A`, `${a2} motores —— X`, `X = (${a2} × ${b1}) / ${a1}`, `X = ${fmt(result,2)} A`]
+    };
+  }
+
+  // CV conversion
+  const cv = diff === 'facil' ? randChoice([1,2,3,5,7.5,10]) : diff === 'medio' ? randFloat(1,30,1) : randFloat(0.5,75,2);
+  const result = cv * 736;
+  return {
+    questionText: `Converta <span class="q-data">${fmt(cv,2)} CV</span> para Watts.`,
+    answer: result, unit: 'W', topic: 'mat', tolerance: Math.max(1, Math.abs(result)*0.01),
+    steps: [`P(W) = CV × 736`, `P = ${fmt(cv,2)} × 736`, `P = ${fmt(result,1)} W`]
+  };
+}
+
+function generateQuestionByTopic(topic, diff) {
+  if (topic === 'fp') return genFP(diff);
+  if (topic === 'mono') return genMono(diff);
+  if (topic === 'tri') return genTri(diff);
+  return genMat(diff);
+}
+
+// =====================================================================
+// PAGINA: GERADOR DE EXERCÍCIOS
+// =====================================================================
+let genState = { topic: 'fp', diff: 'facil', current: null, streak: 0 };
+
+function setGenTopic(t) {
+  genState.topic = t;
+  document.querySelectorAll('#gen-topic-tabs .gen-mode-tab').forEach(el => {
+    el.classList.toggle('active', el.dataset.topic === t);
+  });
+  generateQuestion();
+}
+
+function setGenDiff(d) {
+  genState.diff = d;
+  document.querySelectorAll('#gen-diff-select .gen-diff-btn').forEach(el => {
+    el.classList.toggle('active', el.dataset.diff === d);
+  });
+  generateQuestion();
+}
+
+const topicLabels = { fp: 'Fator de Potência', mono: 'Motor Monofásico', tri: 'Motor Trifásico', mat: 'Matemática Aplicada' };
+const diffLabels = { facil: '🟢 Fácil', medio: '🟡 Médio', dificil: '🔴 Difícil' };
+
+function generateQuestion() {
+  const q = generateQuestionByTopic(genState.topic, genState.diff);
+  genState.current = q;
+
+  document.getElementById('gen-q-tag').textContent = `${topicLabels[genState.topic]} · ${diffLabels[genState.diff]}`;
+  document.getElementById('gen-q-text').innerHTML = q.questionText;
+  document.getElementById('gen-unit-label').textContent = q.unit;
+  document.getElementById('gen-answer-input').value = '';
+  document.getElementById('gen-streak').textContent = genState.streak;
+
+  const fb = document.getElementById('gen-feedback');
+  fb.className = 'feedback-panel';
+  fb.innerHTML = '';
+
+  document.getElementById('gen-btn-verify').style.display = 'inline-block';
+  document.getElementById('gen-btn-next').style.display = 'none';
+  document.getElementById('gen-answer-input').disabled = false;
+}
+
+function verifyGenAnswer() {
+  const q = genState.current;
+  const input = document.getElementById('gen-answer-input');
+  const raw = input.value.replace(',', '.').trim();
+  const val = parseFloat(raw);
+  const fb = document.getElementById('gen-feedback');
+
+  if (isNaN(val)) { alert('Digite um número válido.'); return; }
+
+  const correct = Math.abs(val - q.answer) <= q.tolerance;
+
+  if (correct) {
+    genState.streak++;
+    addXP(10 + (genState.diff === 'medio' ? 5 : genState.diff === 'dificil' ? 10 : 0));
+    fb.className = 'feedback-panel correct';
+    fb.innerHTML = `<div class="feedback-title">✅ Correto! +${10 + (genState.diff === 'medio' ? 5 : genState.diff === 'dificil' ? 10 : 0)} XP</div>
+      <div class="feedback-steps">${q.steps.map(s => `<div class="fs-line">${s}</div>`).join('')}</div>`;
+  } else {
+    genState.streak = 0;
+    fb.className = 'feedback-panel wrong';
+    fb.innerHTML = `<div class="feedback-title">❌ Não foi essa. Resposta correta: ${fmt(q.answer,2)} ${q.unit}</div>
+      <div class="feedback-steps">${q.steps.map(s => `<div class="fs-line">${s}</div>`).join('')}<div class="fs-result">Você respondeu: ${fmt(val,2)}</div></div>`;
+  }
+
+  recordAnswer(q.topic, correct, 0);
+  document.getElementById('gen-streak').textContent = genState.streak;
+  document.getElementById('gen-btn-verify').style.display = 'none';
+  document.getElementById('gen-btn-next').style.display = 'inline-block';
+  input.disabled = true;
+}
+
+// =====================================================================
+// PAGINA: TREINO INFINITO
+// =====================================================================
+let tiState = { diff: 'facil', current: null, streak: 0, solved: 0 };
+
+function setTiDiff(d) {
+  tiState.diff = d;
+  document.querySelectorAll('#ti-diff-select .gen-diff-btn').forEach(el => {
+    el.classList.toggle('active', el.dataset.diff === d);
+  });
+  generateTiQuestion();
+}
+
+function generateTiQuestion() {
+  const topics = ['fp', 'mono', 'tri', 'mat'];
+  const topic = randChoice(topics);
+  const q = generateQuestionByTopic(topic, tiState.diff);
+  tiState.current = q;
+
+  document.getElementById('ti-q-tag').textContent = `${topicLabels[topic]} · ${diffLabels[tiState.diff]}`;
+  document.getElementById('ti-q-text').innerHTML = q.questionText;
+  document.getElementById('ti-unit-label').textContent = q.unit;
+  document.getElementById('ti-answer-input').value = '';
+  document.getElementById('ti-streak').textContent = tiState.streak;
+  document.getElementById('ti-solved').textContent = tiState.solved;
+
+  const fb = document.getElementById('ti-feedback');
+  fb.className = 'feedback-panel';
+  fb.innerHTML = '';
+
+  document.getElementById('ti-btn-verify').style.display = 'inline-block';
+  document.getElementById('ti-btn-next').style.display = 'none';
+  document.getElementById('ti-answer-input').disabled = false;
+}
+
+function verifyTiAnswer() {
+  const q = tiState.current;
+  const input = document.getElementById('ti-answer-input');
+  const raw = input.value.replace(',', '.').trim();
+  const val = parseFloat(raw);
+  const fb = document.getElementById('ti-feedback');
+
+  if (isNaN(val)) { alert('Digite um número válido.'); return; }
+
+  const correct = Math.abs(val - q.answer) <= q.tolerance;
+  tiState.solved++;
+
+  if (correct) {
+    tiState.streak++;
+    addXP(8);
+    fb.className = 'feedback-panel correct';
+    fb.innerHTML = `<div class="feedback-title">✅ Correto! +8 XP</div>
+      <div class="feedback-steps">${q.steps.map(s => `<div class="fs-line">${s}</div>`).join('')}</div>`;
+  } else {
+    tiState.streak = 0;
+    fb.className = 'feedback-panel wrong';
+    fb.innerHTML = `<div class="feedback-title">❌ Resposta correta: ${fmt(q.answer,2)} ${q.unit}</div>
+      <div class="feedback-steps">${q.steps.map(s => `<div class="fs-line">${s}</div>`).join('')}</div>`;
+  }
+
+  recordAnswer(q.topic, correct, 0);
+  document.getElementById('ti-streak').textContent = tiState.streak;
+  document.getElementById('ti-solved').textContent = tiState.solved;
+  document.getElementById('ti-btn-verify').style.display = 'none';
+  document.getElementById('ti-btn-next').style.display = 'inline-block';
+  input.disabled = true;
+}
+
+// =====================================================================
+// PAGINA: SIMULADO (MODO PROVA)
+// =====================================================================
+let simState = { questions: [], current: 0, answers: [], startTime: null, timerInterval: null, elapsed: 0 };
+
+function startSimulado() {
+  const topics = ['fp', 'mono', 'tri', 'mat'];
+  const diffs = ['facil', 'medio', 'dificil'];
+  simState.questions = [];
+  for (let i = 0; i < 10; i++) {
+    const topic = randChoice(topics);
+    const diff = i < 3 ? 'facil' : i < 7 ? 'medio' : 'dificil';
+    simState.questions.push(generateQuestionByTopic(topic, diff));
+  }
+  simState.current = 0;
+  simState.answers = [];
+  simState.elapsed = 0;
+
+  document.getElementById('sim-setup-view').style.display = 'none';
+  document.getElementById('sim-results-view').style.display = 'none';
+  document.getElementById('sim-active-view').style.display = 'block';
+
+  simState.startTime = Date.now();
+  if (simState.timerInterval) clearInterval(simState.timerInterval);
+  simState.timerInterval = setInterval(updateSimTimer, 1000);
+
+  showSimQuestion();
+}
+
+function updateSimTimer() {
+  simState.elapsed = Math.floor((Date.now() - simState.startTime) / 1000);
+  const m = Math.floor(simState.elapsed / 60).toString().padStart(2, '0');
+  const s = (simState.elapsed % 60).toString().padStart(2, '0');
+  document.getElementById('sim-timer-display').textContent = `${m}:${s}`;
+}
+
+function showSimQuestion() {
+  const q = simState.questions[simState.current];
+  document.getElementById('sim-q-tag').textContent = `${topicLabels[q.topic]}`;
+  document.getElementById('sim-q-text').innerHTML = q.questionText;
+  document.getElementById('sim-unit-label').textContent = q.unit;
+  document.getElementById('sim-answer-input').value = '';
+  document.getElementById('sim-current-num').textContent = simState.current + 1;
+  document.getElementById('sim-btn-action').textContent = simState.current === 9 ? 'Finalizar Simulado' : 'Próxima →';
+}
+
+function simNextQuestion() {
+  const input = document.getElementById('sim-answer-input');
+  const raw = input.value.replace(',', '.').trim();
+  const val = parseFloat(raw);
+  simState.answers.push(isNaN(val) ? null : val);
+
+  if (simState.current < 9) {
+    simState.current++;
+    showSimQuestion();
+  } else {
+    finishSimulado();
+  }
+}
+
+function finishSimulado() {
+  clearInterval(simState.timerInterval);
+  document.getElementById('sim-active-view').style.display = 'none';
+  document.getElementById('sim-results-view').style.display = 'block';
+
+  let correctCount = 0;
+  const reviewHTML = simState.questions.map((q, idx) => {
+    const userAnswer = simState.answers[idx];
+    const correct = userAnswer !== null && Math.abs(userAnswer - q.answer) <= q.tolerance;
+    if (correct) correctCount++;
+    recordAnswer(q.topic, correct, simState.elapsed / 10);
+
+    return `<div class="sim-review-item">
+      <div class="sim-review-icon">${correct ? '✅' : '❌'}</div>
+      <div class="sim-review-body">
+        <div class="sr-q">${idx+1}. ${q.questionText.replace(/<[^>]*>/g,'')}</div>
+        <div class="sr-a">Sua resposta: ${userAnswer !== null ? fmt(userAnswer,2) : '(vazio)'} ${q.unit} &nbsp;|&nbsp; Correta: ${fmt(q.answer,2)} ${q.unit}</div>
+      </div>
+    </div>`;
+  }).join('');
+
+  const pct = Math.round((correctCount / 10) * 100);
+  const circle = document.getElementById('sim-score-circle');
+  const color = pct >= 70 ? 'var(--green)' : pct >= 40 ? 'var(--accent3)' : 'var(--red)';
+  circle.style.borderColor = color;
+  document.getElementById('sim-score-pct').textContent = pct + '%';
+  document.getElementById('sim-score-pct').style.color = color;
+
+  const m = Math.floor(simState.elapsed / 60);
+  const s = simState.elapsed % 60;
+  document.getElementById('sim-results-sub').textContent = `${correctCount} de 10 questões corretas · Tempo total: ${m}min ${s}s`;
+  document.getElementById('sim-review-list').innerHTML = reviewHTML;
+
+  addXP(pct >= 70 ? 50 : pct >= 40 ? 25 : 10);
+
+  stats.simulados.push({ date: Date.now(), score: pct, time: simState.elapsed });
+  saveStats(stats);
+}
+
 // Init
+updateSidebarXP();
 showPage('intro');
 </script>
 </body>
